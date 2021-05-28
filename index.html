@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Python Technical Documentation Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <main id="main-doc">
+            <nav id="navbar">
+                <header>
+                    Python Technical Documentation
+                </header>
+
+                <a class="nav-link" href="#Introduction"><span>Introduction</span></a>
+                <a class="nav-link" href="#Installing_Python"><span>Installing Python</span></a>
+                <a class="nav-link" href="#Using_Python"><span>Using Python</span></a>
+                <a class="nav-link" href="#Installing_Modules"><span>Installing Modules</span></a>
+                <a class="nav-link" href="#Distributing_Modules"><span>Distributing Modules</span></a>
+
+            </nav>
+
+            <section class="main-section" id="Introduction">
+                <header>
+                    <h1>Introduction</h1>
+
+                    <p>If you do much work on computers, eventually you find that there’s some task you’d like to automate. For example, 
+                    you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. 
+                    Perhaps you’d like to write a small custom database, or a specialized GUI application, or a simple game.
+                    <br>
+                    <br>
+                    If you’re a professional software developer, you may have to work with several C/C++/Java libraries but find the usual write/compile/test/re-compile 
+                    cycle is too slow. Perhaps you’re writing a test suite for such a library and find writing the testing code a tedious task. Or maybe you’ve written a 
+                    program that could use an extension language, and you don’t want to design and implement a whole new language for your application.</p>
+
+                    <p>Python is just the language for you.</p>
+
+                    <p>You could write a Unix shell script or Windows batch files for some of these tasks, but shell scripts are best at moving around files 
+                    and changing text data, not well-suited for GUI applications or games. You could write a C/C++/Java program, but it can take a lot of development 
+                    time to get even a first-draft program. Python is simpler to use, available on Windows, Mac OS X, and Unix operating systems, and will help you get 
+                    the job done more quickly.
+                    <br>
+                    <br>
+                    Python is simple to use, but it is a real programming language, offering much more structure and support for large programs than shell scripts 
+                    or batch files can offer. On the other hand, Python also offers much more error checking than C, and, being a very-high-level language, it has 
+                    high-level data types built in, such as flexible arrays and dictionaries. Because of its more general data types Python is applicable to a much 
+                    larger problem domain than Awk or even Perl, yet many things are at least as easy in Python as in those languages.
+                    <br>
+                    <br>
+                    </p>
+
+                </header>
+            </section>
+
+            <section class="main-section" id="Installing_Python">
+                <header>
+                    <h1>Installing Python</h1>
+
+                    <p>Four Python 3.9 installers are available for download - two each for the 32-bit and 64-bit versions of the interpreter. 
+                    The web installer is a small initial download, and it will automatically download the required components as necessary. 
+                    The offline installer includes the components necessary for a default installation and only requires an internet connection for optional features.</p>
+
+                    <img src="https://docs.python.org/3/_images/win_installer.png">
+
+                    <p>Windows allows environment variables to be configured permanently at both the User level and the System level, or temporarily in a command prompt.
+                    <br>
+                    <br>
+                    To temporarily set environment variables, open Command Prompt and use the set command:
+                    <br>
+                    <br>
+
+                    <code>C:\>set PATH=C:\Program Files\Python 3.9;%PATH%</code><br>
+                    <code>C:\>set PYTHONPATH=%PYTHONPATH%;</code><br>
+                    <code>C:\My_python_lib</code><br>
+                    <code>C:\>python</code>
+                    
+                    <br>
+                    <br>
+                    These changes will apply to any further commands executed in that console, and will be inherited by any applications started from the console.
+                    <br>
+                    <br>
+                    Including the variable name within percent signs will expand to the existing value, allowing you to add your new value at either the start or the end. 
+                    Modifying <code>PATH</code> by adding the directory containing python.exe to the start is a common way to ensure the correct version of Python is launched.
+                    <br>
+                    <br>
+                    </p>
+
+                </header>
+            </section>
+
+            <section class="main-section" id="Using_Python">
+                <header>
+                    <h1>Using Python</h1>
+
+                    <p>System-wide installations of Python 3.3 and later will put the launcher on your <code>PATH</code>. The launcher is compatible with all available versions of Python, 
+                    so it does not matter which version is installed. To check that the launcher is available, execute the following command in Command Prompt:
+                    <br>
+                    <br>
+
+                    <code>py</code>
+                
+                    <br>
+                    <br>
+                    You should find that the latest version of Python you have installed is started - it can be exited as normal, and any additional command-line arguments 
+                    specified will be sent directly to Python.
+                    <br>
+                    <br>
+                    If you have multiple versions of Python installed (e.g., 2.7 and 3.9) you will have noticed that Python 3.9 was started - to launch Python 2.7, try the command:
+                    <br>
+                    <br>
+
+                    <code>py -2.7</code>
+
+                    <br>
+                    <br>
+                    If you want the latest version of Python 2.x you have installed, try the command:
+                    <br>
+                    <br>
+
+                    <code>py -2</code>
+
+                    <br>
+                    <br>
+                    You should find the latest version of Python 2.x starts.
+                    <br>
+                    <br>
+                    If you see the following error, you do not have the launcher installed:
+                    <br>
+                    <br>
+
+                    <code>'py' is not recognized as an internal or external command,
+                    program or batch file.</code>
+
+                    <br>
+                    <br>
+                    Per-user installations of Python do not add the launcher to <code>PATH</code> unless the option was selected on installation.
+                    </p>
+
+                    <p>Python usually stores its library (and thereby your site-packages folder) in the installation directory. So, if you had installed Python to 
+                    C:\Python\, the default library would reside in C:\Python\Lib\ and third-party modules should be stored in C:\Python\Lib\site-packages\.
+                    <br>
+                    <br>
+                    To completely override sys.path, create a ._pth file with the same name as the DLL (python37._pth) or the executable (python._pth) and specify 
+                    one line for each path to add to sys.path. The file based on the DLL name overrides the one based on the executable, which allows paths to be 
+                    restricted for any program loading the runtime if desired.
+                    <br>
+                    <br>
+                    When the file exists, all registry and environment variables are ignored, isolated mode is enabled, and site is not imported unless one line 
+                    in the file specifies import site. Blank paths and lines starting with # are ignored. Each path may be absolute or relative to the location of 
+                    the file. Import statements other than to site are not permitted, and arbitrary code cannot be specified.
+                    <br>
+                    <br>
+                    Note that .pth files (without leading underscore) will be processed normally by the site module when import site has been specified.
+                    <br>
+                    <br>
+                    When no ._pth file is found, this is how sys.path is populated on Windows:
+                    <br>
+                        <ul>
+                            <li>An empty entry is added at the start, which corresponds to the current directory.</li>
+                            
+                            <br>
+
+                            <li>If the environment variable <code>PYTHONPATH</code> exists, as described in Environment variables, its entries are added next. 
+                            Note that on Windows, paths in this variable must be separated by semicolons, to distinguish them from the colon used 
+                            in drive identifiers (C:\ etc.).</li>
+                            
+                            <br>
+
+                            <li>Additional “application paths” can be added in the registry as subkeys of <code>\SOFTWARE\Python\</code><br><code>PythonCore{version}\PythonPath</code>
+                            under both the <code>HKEY_CURRENT_USER and HKEY_LOCAL_MACHINE</code> hives. Subkeys which have semicolon-delimited path strings as their 
+                            default value will cause each path to be added to sys.path. (Note that all known installers only use HKLM, so HKCU is typically empty.)</li>
+
+                            <br>
+
+                            <li>If the environment variable <code>PYTHONHOME</code> is set, it is assumed as “Python Home”. Otherwise, the path of the main Python executable 
+                            is used to locate a “landmark file” (either <code>Lib\os.py</code> or <code>pythonXY.zip</code>) to deduce the “Python Home”. If a Python home is found, 
+                            the relevant sub-directories added to sys.path (<code>Lib</code>, <code>plat-win</code>, etc) are based on that folder. Otherwise, the core Python path 
+                            is constructed from the PythonPath stored in the registry.</li>
+
+                            <br>
+
+                            <li>If the Python Home cannot be located, no <code>PYTHONPATH</code> is specified in the environment, and no registry entries can be found, 
+                            a default path with relative entries is used (e.g. <code>.\Lib</code>; <code>.\plat-win</code>, etc).</li>
+                        </ul>
+                    <br>
+                    </p>
+
+                </header>
+            </section>
+
+            <section class="main-section" id="Installing_Modules">
+                <header>
+                    <h1>Installing Modules</h1>
+
+                    <p>As a popular open source development project, Python has an active supporting community of contributors and users that also make their 
+                    software available for other Python developers to use under open source license terms.
+                    <br>
+                    <br>
+                    This allows Python users to share and collaborate effectively, benefiting from the solutions others have already created to common 
+                    (and sometimes even rare!) problems, as well as potentially contributing their own solutions to the common pool.
+                    <br>
+                    <br>
+                    </p>
+
+                    <h2>Basic Usage</h2>
+
+                    <p>The standard packaging tools are all designed to be used from the command line.
+                    <br>
+                    <br>
+                    The following command will install the latest version of a module and its dependencies from the Python Packaging Index:
+                    <br>
+                    <br>
+                    
+                    <code>python -m pip install SomePackage</code>
+                    
+                    <br>
+                    <br>
+                    It’s also possible to specify an exact or minimum version directly on the command line. When using comparator operators such as 
+                    <code>&#62;</code>, <code>&#60;</code> or some other special character which get interpreted by shell, the package name and the version should be enclosed within double quotes:
+                    <br>
+                    <br>
+
+                    <code>python -m pip install SomePackage==1.0.4    # specific version</code><br>
+                    <code>python -m pip install "SomePackage>=1.0.4"  # minimum version</code>
+
+                    <br>
+                    <br>
+                    Normally, if a suitable module is already installed, attempting to install it again will have no effect. 
+                    Upgrading existing modules must be requested explicitly:
+                    <br>
+                    <br>
+
+                    <code>python -m pip install --upgrade SomePackage</code>
+
+                    <br>
+                    <br>
+                    Creation of virtual environments is done through the <code>venv</code> module. Installing packages into an active virtual environment uses the commands shown above.
+                    <br>
+                    <br>
+                    </p>
+
+                </header>
+            </section>
+
+            <section class="main-section" id="Distributing_Modules">
+                <header>
+                    <h1>Distributing Modules</h1>
+
+                    <p>As a popular open source development project, Python has an active supporting community of contributors and users that also make 
+                    their software available for other Python developers to use under open source license terms.
+                    <br>
+                    <br>
+                    This allows Python users to share and collaborate effectively, benefiting from the solutions others have already created 
+                    to common (and sometimes even rare!) problems, as well as potentially contributing their own solutions to the common pool.
+                    <br>
+                    <br>
+                    </p>
+
+                    <h2>Open Source Licensing and Collaboration</h2>
+
+                    <p>In most parts of the world, software is automatically covered by copyright. This means that other developers require 
+                    explicit permission to copy, use, modify and redistribute the software.
+                    <br>
+                    <br>
+                    Open source licensing is a way of explicitly granting such permission in a relatively consistent way, allowing developers 
+                    to share and collaborate efficiently by making common solutions to various problems freely available. This leaves many developers 
+                    free to spend more time focusing on the problems that are relatively unique to their specific situation.
+                    <br>
+                    <br>
+                    The distribution tools provided with Python are designed to make it reasonably straightforward for developers to make their own 
+                    contributions back to that common pool of software if they choose to do so.
+                    <br>
+                    <br>
+                    The same distribution tools can also be used to distribute software within an organisation, regardless of whether that 
+                    software is published as open source software or not.
+                    <br>
+                    <br>
+                    The standard library does not include build tools that support modern Python packaging standards, as the core development team has found that it is important to have standard tools that work consistently, even on older versions of Python.
+                    <br>
+                    <br>
+                    The currently recommended build and distribution tools can be installed by invoking the pip module at the command line:
+                    <br>
+                    <br>
+                    
+                    <code>python -m pip install setuptools wheel twine</code>
+
+                    <br>
+                    <br>
+                    </p>
+
+                </header>
+            </section>
+        </main>
+
+        <footer>
+            <hr>
+            <h4 id="footerlicense">MIT License</h4>
+            <h4 id="footername">Copyright (c) 2021 Leonardo Nabarro Tonezer</h4>
+        </footer>
+    </body>
+</html>

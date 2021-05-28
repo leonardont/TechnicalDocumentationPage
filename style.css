@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+}
+
+#navbar {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #dedede;
+    overflow-x: hidden;
+    padding-top: 20px;
+    font-family: Verdana, Arial;
+}
+
+#navbar header {
+    width: 100%;
+    height: auto;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+#navbar a {
+    display: list-item;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+#navbar a:hover {
+    color: white;
+}
+
+#navbar span {
+    position: relative;
+    left: -8px;
+}
+
+main {
+    margin: 1% 300px 1% 200px;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-family: Tahoma, Arial;
+    font-size: 27px;
+}
+h2 {
+    font-family: Tahoma, Arial;
+    font-size: 25px;
+}
+
+p {
+    font-family: "Times New Roman", Arial;
+}
+
+footer {
+    font-family: Garamond, Arial;
+    margin: 30px auto auto 150px;
+    background-color: white;
+    text-align: center;
+}
+
+#footerlicense {
+    margin-bottom: 10px;
+}
+
+#footername {
+    margin-top: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+code {
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid darkgreen;
+    border-radius: 10px;
+    line-height: 45px;
+    background-color: rgb(212, 255, 212);
+}
+
+@media screen and (max-height: 450px) and (max-width: 900px) {
+    #navbar {
+        padding-top: 14px;
+        width: 125px;
+    }
+    #navbar header {
+        padding-bottom: 5px;
+        font-size: 15px;
+    }
+    #navbar a {
+        font-size: 12px;
+    }
+    main {
+        margin: 1% 0 1% 150px;
+    }
+    footer {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-height: 200px) and (max-width: 400px) {
+    #navbar {
+        padding-top: 5px;
+        width: 125px;
+    }
+    #navbar header {
+        padding-bottom: 5px;
+        font-size: 5px;
+    }
+    #navbar a {
+        font-size: 3px;
+    }
+    main {
+        margin: 1% 0 1% 100px;
+    }
+    footer {
+        max-width: 100%;
+        height: auto;   
+    }
+}
+
+@media screen and (max-height: 800px) and (max-width: 1200px) {
+    main {
+        margin: 1% 100px 1% 200px;
+    }
+    footer {
+        max-width: 100%;
+        height: auto;
+    }
+}
