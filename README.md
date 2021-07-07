@@ -1,3 +1,3 @@
 # "Python" Technical Documentation Page
-A technical documentation page in HTML and CSS, for the freeCodeCamp course. <br> 
-This webpage's theme is a Python (language) documentation page.
+A simple technical documentation page with HTML and CSS, made for the freeCodeCamp course.<br> 
+This site's theme is a Python technical documentation page.
